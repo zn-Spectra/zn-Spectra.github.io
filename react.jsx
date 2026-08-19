@@ -1,4 +1,4 @@
-/* @jsxRuntime classic */
+/** @jsx React.createElement */
 const { useState, useEffect, useRef } = React;
 
 
