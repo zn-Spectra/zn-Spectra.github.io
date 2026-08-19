@@ -54,21 +54,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ─── Background ─── */
-.bg-slideshow { position: fixed; inset: 0; z-index: 0; overflow: hidden; }
-.bg-slideshow .slide {
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  opacity: 0; transition: opacity 2.2s ease-in-out; will-change: opacity;
-}
-.bg-slideshow .slide.active { opacity: 1; }
-.bg-overlay { position: fixed; inset: 0; background: rgba(9, 11, 14, 0.82); z-index: 1; pointer-events: none; }
 .bg-grid {
-  position: fixed; inset: 0; z-index: 2; pointer-events: none;
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-color: #080a0d;
   background-image:
-    linear-gradient(rgba(77, 155, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(77, 155, 255, 0.05) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(77, 155, 255, 0.07) 0%, transparent 70%),
+    linear-gradient(rgba(77, 155, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77, 155, 255, 0.04) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
 }
 .content { position: relative; z-index: 10; }
 
