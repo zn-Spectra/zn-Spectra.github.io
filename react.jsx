@@ -401,33 +401,33 @@ function App() {
   const [sent, setSent] = useState(false);
 
   const services = [
-    { icon: <Icon3D />, axis: 'x', title: 'Modélisation 3D', desc: 'Assets low-poly et high-poly, texturing PBR, prêts pour le jeu vidéo ou l\u2019animation.' },
-    { icon: <IconGame />, axis: 'y', title: 'Développement de jeu', desc: 'Mécaniques complètes, prototypage rapide, gameplay abouti sur Unity et Godot.' },
-    { icon: <IconLevel />, axis: 'z', title: 'Level Design', desc: 'Environnements immersifs, éclairage et narration environnementale.' },
-    { icon: <IconOptimize />, axis: 'warn', title: 'Optimisation', desc: 'Topologie efficace et budgets mémoire maîtrisés pour des builds fluides.' },
+    { icon: <Icon3D />, axis: 'x', title: '3D Modeling', desc: 'Low-poly and high-poly assets, PBR texturing, ready for games or animation.' },
+    { icon: <IconGame />, axis: 'y', title: 'Game Development', desc: 'Complete mechanics, rapid prototyping, polished gameplay on Unity and Godot.' },
+    { icon: <IconLevel />, axis: 'z', title: 'Level Design', desc: 'Immersive environments, lighting, and environmental storytelling.' },
+    { icon: <IconOptimize />, axis: 'warn', title: 'Optimization', desc: 'Efficient topology and controlled memory budgets for smooth builds.' },
   ];
 
   const portfolioItems = [
-    { id: 1, title: 'Cyberpunk City', category: 'Environnement urbain', engine: 'UNITY', image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop' },
-    { id: 2, title: 'Mystic Forest', category: 'Environnement naturel', engine: 'GODOT', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop' },
-    { id: 3, title: 'Space Station AR', category: 'Réalité augmentée', engine: 'AR/VR', image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070&auto=format&fit=crop' },
-    { id: 4, title: 'Ancient Ruins', category: 'Exploration VR', engine: 'VR', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop' },
-    { id: 5, title: 'Neon Racer', category: 'Circuit stylisé', engine: 'UNITY', image: 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2070&auto=format&fit=crop' },
-    { id: 6, title: 'Underwater World', category: 'Environnement sous-marin', engine: 'GODOT', image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2070&auto=format&fit=crop' },
+    { id: 1, title: 'Cyberpunk City', category: 'Urban Environment', engine: 'UNITY', image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop' },
+    { id: 2, title: 'Mystic Forest', category: 'Natural Environment', engine: 'GODOT', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop' },
+    { id: 3, title: 'Space Station AR', category: 'Augmented Reality', engine: 'AR/VR', image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070&auto=format&fit=crop' },
+    { id: 4, title: 'Ancient Ruins', category: 'VR Exploration', engine: 'VR', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop' },
+    { id: 5, title: 'Neon Racer', category: 'Stylized Racing', engine: 'UNITY', image: 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2070&auto=format&fit=crop' },
+    { id: 6, title: 'Underwater World', category: 'Underwater Environment', engine: 'GODOT', image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2070&auto=format&fit=crop' },
   ];
 
   const filteredItems = filter === 'all' ? portfolioItems : portfolioItems.filter((i) => i.engine === filter);
 
   const testimonials = [
-    { quote: 'Nidhal a transformé notre concept de jeu en une réalité saisissante. Son travail 3D est exceptionnel.', author: 'Sarah K.', role: 'CEO, GameForge', avatar: 'https://randomuser.me/api/portraits/women/44.jpg' },
-    { quote: 'Livraison de qualité, dans les temps et le budget. Une collaboration sans accroc du début à la fin.', author: 'Mark R.', role: 'Lead Developer, VR Solutions', avatar: 'https://randomuser.me/api/portraits/men/32.jpg' },
-    { quote: 'L\u2019expérience AR qu\u2019il a construite a dépassé toutes nos attentes. Immersive et très soignée.', author: 'Emily T.', role: 'Product Manager, AR Innovations', avatar: 'https://randomuser.me/api/portraits/women/68.jpg' },
+    { quote: 'Nidhal turned our game concept into a stunning reality. His 3D work is truly exceptional.', author: 'Sarah K.', role: 'CEO, GameForge', avatar: 'https://randomuser.me/api/portraits/women/44.jpg' },
+    { quote: 'High-quality delivery, on time and on budget. A seamless collaboration from start to finish.', author: 'Mark R.', role: 'Lead Developer, VR Solutions', avatar: 'https://randomuser.me/api/portraits/men/32.jpg' },
+    { quote: 'The AR experience he built exceeded all our expectations. Immersive and incredibly polished.', author: 'Emily T.', role: 'Product Manager, AR Innovations', avatar: 'https://randomuser.me/api/portraits/women/68.jpg' },
   ];
 
   const experiences = [
-    { version: 'v3 — actuel', title: 'Artiste 3D Senior', company: 'Studio Alpha', period: '2022 – présent', description: 'Artiste 3D principal sur des projets AAA, spécialisé en environnement et optimisation.' },
-    { version: 'v2', title: 'Développeur Unity', company: 'Indie Games Inc.', period: '2020 – 2022', description: 'Développement de plusieurs prototypes et jeux complets, axés gameplay et performance.' },
-    { version: 'v1', title: 'Généraliste 3D freelance', company: 'Indépendant', period: '2018 – 2020', description: 'Modélisation, texturing et animation 3D pour des clients variés, jeux et simulations.' },
+    { version: 'v3 — current', title: 'Senior 3D Artist', company: 'Studio Alpha', period: '2022 – present', description: 'Lead 3D artist on AAA projects, specialized in environment art and performance optimization.' },
+    { version: 'v2', title: 'Unity Developer', company: 'Indie Games Inc.', period: '2020 – 2022', description: 'Developed multiple prototypes and complete games, focused on gameplay and performance.' },
+    { version: 'v1', title: 'Freelance 3D Generalist', company: 'Self-employed', period: '2018 – 2020', description: '3D modeling, texturing and animation for various clients across games and simulations.' },
   ];
 
   const openModal = (item) => setSelectedProject(item);
@@ -468,11 +468,11 @@ function App() {
         <div className="hidden md:flex items-center gap-6">
           <a href="#services" className="nav-link">Services</a>
           <a href="#portfolio" className="nav-link">Portfolio</a>
-          <a href="#experience" className="nav-link">Parcours</a>
-          <a href="#testimonials" className="nav-link">Avis</a>
+          <a href="#experience" className="nav-link">Experience</a>
+          <a href="#testimonials" className="nav-link">Reviews</a>
           <a href="#contact" className="nav-link">Contact</a>
           <a href="https://upwork.com/freelancers/zitounin2" target="_blank" rel="noopener noreferrer" className="btn-outline">Upwork</a>
-          <a href="#contact" className="btn-primary">Me contacter</a>
+          <a href="#contact" className="btn-primary">Hire Me</a>
         </div>
 
         <div className="md:hidden flex items-center gap-2">
@@ -488,15 +488,15 @@ function App() {
             <span className="hud-label" style={{ color: 'var(--axis-z)' }}>3D · Unity · Godot · AR/VR</span>
           </div>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.05] tracking-tight">
-            Je construis des mondes<br />qu&rsquo;on a envie d&rsquo;explorer.
+            I build worlds<br />worth exploring.
           </h1>
           <p className="text-[var(--text-dim)] text-base sm:text-lg max-w-md mt-5 font-light leading-relaxed">
-            Artiste 3D et développeur de jeux. De l&rsquo;asset brut au niveau jouable,
-            j&rsquo;assemble modélisation, gameplay et optimisation en une seule pipeline.
+            3D Artist &amp; Game Developer. From raw asset to playable level,
+            I combine modeling, gameplay, and optimization into one seamless pipeline.
           </p>
           <div className="flex flex-wrap gap-3 mt-7">
-            <a href="#portfolio" className="btn-primary">Voir le portfolio</a>
-            <a href="#contact" className="btn-outline">Discuter d&rsquo;un projet</a>
+            <a href="#portfolio" className="btn-primary">View Portfolio</a>
+            <a href="#contact" className="btn-outline">Discuss a Project</a>
           </div>
           <div className="mt-8 max-w-sm">
             <TransformRow />
@@ -506,7 +506,7 @@ function App() {
         <div className="lg:col-span-2 flex flex-col gap-3 fade-in fade-in-d2">
           <ViewportPreview />
           <div className="grid grid-cols-2 gap-3">
-            <Card><Stat label="Scènes actives" value={47} change="+12%" /></Card>
+            <Card><Stat label="Active Scenes" value={47} change="+12%" /></Card>
             <Card><Stat label="Performance" value={98.2} suffix="%" /></Card>
           </div>
         </div>
@@ -515,7 +515,7 @@ function App() {
       {/* SERVICES */}
       <div id="services" className="pt-4 pb-8 fade-in fade-in-d3">
         <div className="section-header">
-          <span className="eyebrow">Ce que je fais</span>
+          <span className="eyebrow">What I Do</span>
           <h2>Services</h2>
           <div className="line"></div>
         </div>
@@ -533,14 +533,14 @@ function App() {
       {/* PORTFOLIO */}
       <div id="portfolio" className="py-6 fade-in fade-in-d4">
         <div className="section-header">
-          <span className="eyebrow">Travaux récents</span>
+          <span className="eyebrow">Recent Work</span>
           <h2>Portfolio</h2>
           <div className="line"></div>
         </div>
         <div className="flex flex-wrap gap-2 mb-6">
           {['all', 'UNITY', 'GODOT', 'AR/VR', 'VR'].map((cat) => (
             <button key={cat} className={`filter-btn ${filter === cat ? 'active' : ''}`} onClick={() => setFilter(cat)}>
-              {cat === 'all' ? 'Tout' : cat}
+              {cat === 'all' ? 'All' : cat}
             </button>
           ))}
         </div>
@@ -554,8 +554,8 @@ function App() {
       {/* EXPERIENCE */}
       <div id="experience" className="py-6 fade-in fade-in-d5">
         <div className="section-header">
-          <span className="eyebrow">Journal de bord</span>
-          <h2>Parcours</h2>
+          <span className="eyebrow">Career Log</span>
+          <h2>Experience</h2>
           <div className="line"></div>
         </div>
         <div className="max-w-2xl">
@@ -567,7 +567,7 @@ function App() {
       <div id="testimonials" className="py-6 fade-in fade-in-d6">
         <div className="section-header">
           <IconStar />
-          <h2>Avis clients</h2>
+          <h2>Client Reviews</h2>
           <div className="line"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -579,24 +579,24 @@ function App() {
       <div id="contact" className="py-6 fade-in fade-in-d7">
         <div className="section-header">
           <IconMail />
-          <h2>Me contacter</h2>
+          <h2>Get in Touch</h2>
           <div className="line"></div>
         </div>
         <Card className="max-w-2xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="text-[var(--text-dim)] text-sm font-medium">Nom</label>
-              <input type="text" name="name" value={formData.name} onChange={handleChange} className="contact-input mt-1.5" placeholder="Votre nom" required />
+              <label className="text-[var(--text-dim)] text-sm font-medium">Name</label>
+              <input type="text" name="name" value={formData.name} onChange={handleChange} className="contact-input mt-1.5" placeholder="Your name" required />
             </div>
             <div>
               <label className="text-[var(--text-dim)] text-sm font-medium">Email</label>
-              <input type="email" name="email" value={formData.email} onChange={handleChange} className="contact-input mt-1.5" placeholder="vous@exemple.com" required />
+              <input type="email" name="email" value={formData.email} onChange={handleChange} className="contact-input mt-1.5" placeholder="you@example.com" required />
             </div>
             <div>
               <label className="text-[var(--text-dim)] text-sm font-medium">Message</label>
-              <textarea name="message" rows="4" value={formData.message} onChange={handleChange} className="contact-input mt-1.5" placeholder="Parlez-moi de votre projet..." required></textarea>
+              <textarea name="message" rows="4" value={formData.message} onChange={handleChange} className="contact-input mt-1.5" placeholder="Tell me about your project..." required></textarea>
             </div>
-            <button type="submit" className="btn-primary w-full">{sent ? 'Message envoyé ✓' : 'Envoyer le message'}</button>
+            <button type="submit" className="btn-primary w-full">{sent ? 'Message sent ✓' : 'Send Message'}</button>
           </form>
         </Card>
       </div>
@@ -604,21 +604,21 @@ function App() {
       {/* IMPACT STATS */}
       <div className="py-6 fade-in fade-in-d8">
         <div className="section-header">
-          <span className="eyebrow">Bilan</span>
+          <span className="eyebrow">Track Record</span>
           <h2>Impact</h2>
           <div className="line"></div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Card><Stat label="Projets livrés" value={112} animated /></Card>
-          <Card><Stat label="Clients satisfaits" value={89} animated change="+18%" /></Card>
-          <Card><Stat label="Titres AR/VR" value={24} animated /></Card>
-          <Card><Stat label="Années d'expérience" value={7} animated /></Card>
+          <Card><Stat label="Projects Delivered" value={112} animated /></Card>
+          <Card><Stat label="Happy Clients" value={89} animated change="+18%" /></Card>
+          <Card><Stat label="AR/VR Titles" value={24} animated /></Card>
+          <Card><Stat label="Years Experience" value={7} animated /></Card>
         </div>
       </div>
 
       {/* FOOTER */}
       <div className="pt-10 pb-5 mt-2 border-t border-[var(--border)] flex flex-col sm:flex-row justify-between items-center gap-3">
-        <div className="hud-label">© 2026 Nidhal Zitouni · Artiste 3D &amp; Développeur Unity/Godot</div>
+        <div className="hud-label">© 2026 Nidhal Zitouni · 3D Artist &amp; Unity/Godot Developer</div>
         <div className="flex flex-wrap items-center gap-5 hud-label">
           <a href="#" className="hover:text-[var(--text)] transition-colors">GitHub</a>
           <a href="#" className="hover:text-[var(--text)] transition-colors">LinkedIn</a>
@@ -637,15 +637,15 @@ function App() {
             <h3 className="font-display text-2xl font-medium text-[var(--text)] mt-1">{selectedProject.title}</h3>
             <p className="hud-label mt-1">{selectedProject.category}</p>
             <p className="text-[var(--text-dim)] mt-4 text-sm leading-relaxed">
-              Détails du projet à compléter : contexte, rôle exact, outils utilisés et résultat obtenu.
+              Project details to complete: context, exact role, tools used and outcome achieved.
             </p>
-            <button onClick={closeModal} className="mt-6 btn-outline">Fermer</button>
+            <button onClick={closeModal} className="mt-6 btn-outline">Close</button>
           </div>
         </div>
       )}
 
       {/* BACK TO TOP */}
-      <div className={`back-to-top ${visible ? 'visible' : ''}`} onClick={scrollToTop} role="button" aria-label="Retour en haut">
+      <div className={`back-to-top ${visible ? 'visible' : ''}`} onClick={scrollToTop} role="button" aria-label="Back to top">
         <IconArrowUp />
       </div>
     </main>
