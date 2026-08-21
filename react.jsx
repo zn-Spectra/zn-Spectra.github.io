@@ -373,7 +373,7 @@ function ExperienceItem({ version, title, company, period, description }) {
   );
 }
 
-function PortfolioItem({ title, category, engine, image, onClick }) {
+function PortfolioItem({ title, category, engine, image, artist, onClick }) {
   return (
     <div className="portfolio-item" onClick={onClick} role="button" tabIndex={0}
       onKeyDown={(e) => { if (e.key === 'Enter') onClick(); }}>
@@ -382,6 +382,7 @@ function PortfolioItem({ title, category, engine, image, onClick }) {
         <span className="engine-tag">{engine}</span>
         <h4 className="text-[var(--text)] text-base font-medium">{title}</h4>
         <span className="hud-label">{category}</span>
+        {artist && <span className="hud-label" style={{marginTop: '4px', color: 'var(--accent)'}}>by {artist}</span>}
       </div>
     </div>
   );
@@ -408,12 +409,12 @@ function App() {
   ];
 
   const portfolioItems = [
-    { id: 1, title: 'Cyberpunk City', category: 'Urban Environment', engine: 'UNITY', image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop' },
-    { id: 2, title: 'Mystic Forest', category: 'Natural Environment', engine: 'GODOT', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop' },
-    { id: 3, title: 'Space Station AR', category: 'Augmented Reality', engine: 'AR/VR', image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070&auto=format&fit=crop' },
-    { id: 4, title: 'Ancient Ruins', category: 'VR Exploration', engine: 'VR', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop' },
-    { id: 5, title: 'Neon Racer', category: 'Stylized Racing', engine: 'UNITY', image: 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2070&auto=format&fit=crop' },
-    { id: 6, title: 'Underwater World', category: 'Underwater Environment', engine: 'GODOT', image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2070&auto=format&fit=crop' },
+    { id: 1, title: 'Blender Environment Scenes', category: 'Environment Concept Art', engine: 'BLENDER', artist: 'Val Orlov', image: 'https://cdna.artstation.com/p/assets/images/images/069/751/414/large/val-orlov-scene-03.jpg?1700912903', artstation: 'https://www.artstation.com/artwork/rJLmZO', description: 'Stunning environment concept art scenes created in Blender, featuring atmospheric lighting and detailed world-building.' },
+    { id: 2, title: 'Environment Scene 02', category: 'Environment Concept Art', engine: 'BLENDER', artist: 'Val Orlov', image: 'https://cdnb.artstation.com/p/assets/images/images/069/835/595/large/val-orlov-scene-02-1.jpg?1701128292', artstation: 'https://www.artstation.com/artwork/rJLmZO', description: 'Detailed environment scene with rich atmosphere, designed in Blender with photorealistic materials.' },
+    { id: 3, title: 'Frozen Colony — Establishing', category: 'Concept Art', engine: 'BLENDER', artist: 'Kevin Jick', image: 'https://cdna.artstation.com/p/assets/images/images/069/751/412/large/val-orlov-scene-01.jpg?1700912898', artstation: 'https://www.artstation.com/artwork/Y8K86P', description: 'Building exterior concepts for a frozen abandoned colony. Created in Blender & Photoshop during Art Train Mentorship with Sathish Kumar.' },
+    { id: 4, title: 'Sanctum — Capital City', category: 'Environment Design', engine: 'BLENDER', artist: 'Kevin Jick', image: 'https://cdna.artstation.com/p/assets/covers/images/070/801/890/large/val-orlov-val-orlov-key-art.jpg?1703583440', artstation: 'https://www.artstation.com/artwork/nJV2V1', description: 'Capital city exploration for the Sanctum project. Cinematic environment design by Kevin Jick, Senior Concept Artist at Naughty Dog.' },
+    { id: 5, title: 'HEAVY METAL', category: 'Hard-Surface / Mech', engine: '3D', artist: 'Jake Woodruff', image: 'https://cdnb.artstation.com/p/assets/video_clips/images/070/185/465/large/val-orlov-thumb.jpg?1701944071', artstation: 'https://www.artstation.com/artwork/K3ZQ1y', description: 'Arcane-inspired large-scale robot with procedural materials and textures. By Jake Woodruff, Principal Environment Artist at Playground Games.' },
+    { id: 6, title: 'ARTBOT 3000', category: 'Hard-Surface / Kitbash', engine: '3D', artist: 'Jake Woodruff', image: 'https://cdna.artstation.com/p/assets/images/images/069/751/414/large/val-orlov-scene-03.jpg?1700912903', artstation: 'https://www.artstation.com/artwork/RKgaWv', description: 'Experimental piece created to learn new Marmoset Toolbag workflows. By Jake Woodruff (theatmosphere).' },
   ];
 
   const filteredItems = filter === 'all' ? portfolioItems : portfolioItems.filter((i) => i.engine === filter);
@@ -538,7 +539,7 @@ function App() {
           <div className="line"></div>
         </div>
         <div className="flex flex-wrap gap-2 mb-6">
-          {['all', 'UNITY', 'GODOT', 'AR/VR', 'VR'].map((cat) => (
+          {['all', 'BLENDER', '3D'].map((cat) => (
             <button key={cat} className={`filter-btn ${filter === cat ? 'active' : ''}`} onClick={() => setFilter(cat)}>
               {cat === 'all' ? 'All' : cat}
             </button>
@@ -635,11 +636,16 @@ function App() {
             <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-64 object-cover rounded-lg mb-4" />
             <span className="engine-tag">{selectedProject.engine}</span>
             <h3 className="font-display text-2xl font-medium text-[var(--text)] mt-1">{selectedProject.title}</h3>
-            <p className="hud-label mt-1">{selectedProject.category}</p>
+            <p className="hud-label mt-1">{selectedProject.category}{selectedProject.artist && ` · by ${selectedProject.artist}`}</p>
             <p className="text-[var(--text-dim)] mt-4 text-sm leading-relaxed">
-              Project details to complete: context, exact role, tools used and outcome achieved.
+              {selectedProject.description || 'Project details to complete: context, exact role, tools used and outcome achieved.'}
             </p>
-            <button onClick={closeModal} className="mt-6 btn-outline">Close</button>
+            <div className="flex gap-3 mt-6">
+              {selectedProject.artstation && (
+                <a href={selectedProject.artstation} target="_blank" rel="noopener noreferrer" className="btn-primary">View on ArtStation</a>
+              )}
+              <button onClick={closeModal} className="btn-outline">Close</button>
+            </div>
           </div>
         </div>
       )}
